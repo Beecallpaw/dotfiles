@@ -1,4 +1,11 @@
-set nocompatible               " be improved, required
+" be improved
+set nocompatible               
+
+"NerdCommenter 
+filetype plugin on
+
+"Enable syntax highlighting
+syntax enable
 
 " Indentation
 set autoindent
@@ -8,13 +15,12 @@ set softtabstop=4
 set shiftwidth=4
 set guioptions-=e
 set mouse=a
+
 "File Tabs
 nmap <Leader>h :tabprevious<cr>
 nmap <Leader>l :tabnext<cr>
 nmap <Leader>q :tabclose<cr>
 
-"Enable syntax highlighting
-syntax enable
 
 "======= Plugins ======="
 so ~/.config/nvim/plugins.vim
@@ -25,6 +31,9 @@ set foldcolumn=1 " Left padding
 
 " Change Leader 
 let mapleader= ';'
+
+" Change default Esc binding
+inoremap jk <ESC>
 
 "======= Mappings ======"
 
@@ -37,18 +46,28 @@ nmap <Leader>ep :tabedit ~/.config/nvim/plugins.vim<cr>
 " Automatically write file while changing buffer
 set autowriteall
 
-" Nerdtree
-nmap <Leader>ts :NERDTreeToggle<cr>
-
 " Ctrl P
 nmap <Leader>f :CtrlPMRUFiles<cr>
 nmap <Leader>m :CtrlPBufTag<cr>
 
-let g:ctrlp_custom_ignore = 'node_modules|.git'
+let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 let g:ctrlp_match_window = 'top,order:ttb,min:1,max:10,results:10'
 
 " Nerdtree
+nmap <Leader>ts :NERDTreeToggle<cr>
 let NERDTreeHijackNetrw = 0
+let g:NERDTreeShowIgnoredStatus = 1
+
+" Nerdtree commenter
+let g:NERDSpaceDelims = 1
+
+" Align line-wise comment delimiters flush left instead of following code indentation
+let g:NERDDefaultAlign = 'left'
+
+" Enable NERDCommenterToggle to check all selected lines is commented or not 
+let g:NERDToggleCheckAllLines = 1
+
+map <C-_> <Plug>NERDCommenterToggle
 
 " Ctags
 nmap <Leader>t :tag<space>
@@ -62,7 +81,6 @@ nmap <Leader><space> :nohlsearch<cr>
 
 " Enable incremental search
 set incsearch
-
 
 "====== Split Editor======="
 
@@ -80,20 +98,7 @@ nmap <C-L> <C-W><C-L>
 nmap <C-\> :vsp<cr>
 
 "==========coc.nvim============== 
-nmap <Leader>gd <Plug>(coc-definition)
-nmap <Leader>gr <Plug>(coc-references)
-nmap <Leader>gi <Plug>(coc-implementation)
-
-" Tab for completion
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
-
-" Use <c-space> to trigger completion.
-inoremap <silent><expr> <c-space> coc#refresh()
+so ~/.config/nvim/coc.vim
 
 "========AutoCommands
 " Source automatically on save

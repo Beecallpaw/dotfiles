@@ -123,6 +123,8 @@ alias vi="nvim"
 alias vim="nvim"
 alias v="nvim"
 
+# set vim as default keybindings
+bindkey -v 
 
 #Functions
 function start(){
