@@ -21,6 +21,11 @@ nmap <Leader>h :tabprevious<cr>
 nmap <Leader>l :tabnext<cr>
 nmap <Leader>q :tabclose<cr>
 
+"Change vim register to system clipboard
+set clipboard=unnamedplus
+
+" Paste selected text
+nmap <Leader>p "*p
 
 "======= Plugins ======="
 so ~/.config/nvim/plugins.vim
