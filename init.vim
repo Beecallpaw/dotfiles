@@ -74,6 +74,16 @@ let g:NERDToggleCheckAllLines = 1
 
 map <C-_> <Plug>NERDCommenterToggle
 
+" Syntastic 
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
 " Ctags
 nmap <Leader>t :tag<space>
 
