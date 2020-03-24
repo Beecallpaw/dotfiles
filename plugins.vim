@@ -16,5 +16,6 @@ Plug 'airblade/vim-gitgutter'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'vim-airline/vim-airline'
 Plug 'scrooloose/syntastic'
+Plug 'stephpy/vim-php-cs-fixer'
 
 call plug#end()

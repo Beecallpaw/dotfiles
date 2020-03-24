@@ -87,6 +87,12 @@ let g:syntastic_check_on_wq = 0
 " Ctags
 nmap <Leader>t :tag<space>
 
+" PHP formatter
+let g:php_cs_fixer_level = "psr2"
+
+" Format on save
+autocmd BufWritePost *.php silent! call PhpCsFixerFixFile()
+
 "=======Search========="
 "Highlight search term
 set hlsearch
