@@ -43,13 +43,14 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Shift+Return exec --no-startup-id samedir
 
 # kill focused window
 bindsym $mod+q kill
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
-# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
 bindsym $mod+h focus left
@@ -144,18 +145,34 @@ assign [class="Brave-browser"] $ws2
 assign [class="Code"] $ws3
 assign [class="DBeaver"] $ws4
 assign [class="Nautilus"] $ws5
-assign [class="libreoffice-calc"] $ws6
+assign [class="(?i)libreoffice-writer$"]$ ws6
+assign [class="(?i)soffice"] $ws6
+assign [class="(?i)libreoffice-calc"] $ws6
+assign [class="(?i)libreoffice.*"] $ws6
 assign [class="Slack"] $ws7
 assign [class="Skype"] $ws8
 
 # auto focus recently opened window
 for_window [class="."] focus
 
+# Hide title bar
+for_window [class="."] border pixel 1
+
 # Startup apps
 exec brave-browser
 exec i3-sensible-terminal
-exec code
-exec clipit
+# exec code
+# exec clipit
+
+# Show or open new workspace
+# bindsym $sup+1 exec ~/.config/i3/scripts/terminal.sh
+# bindsym $sup+2 exec ~/.config/i3/scripts/brave.sh
+# bindsym $sup+3 exec ~/.config/i3/scripts/vscode.sh
+# bindsym $sup+4 exec ~/.config/i3/scripts/dbeaver.sh
+# bindsym $sup+5 exec ~/.config/i3/scripts/explorer.sh
+# bindsym $sup+6 exec ~/.config/i3/scripts/office.sh
+# bindsym $sup+7 exec ~/.config/i3/scripts/slack.sh
+# bindsym $sup+8 exec ~/.config/i3/scripts/skype.sh
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -236,7 +253,15 @@ set $white2 #ffffff
 # finds out, if available)
 bar {
         status_command i3blocks -c ~/.config/i3/i3blocks.conf
-        tray_output primary
+        
+        # output for (wifi, slack, etc) on status bar
+        tray_output none
+        
+        # Toggle status bar with $mod
+        mode hide
+        hidden_state hide
+        modifier $mod
+
         # Disable all tray icons
          colors {
         background $black2
@@ -293,6 +318,7 @@ exec --no-startup-id feh --no-fehbg --bg-fill $imagepath
 
 # Apps shortcuts
 bindsym $sup+e exec xdg-open .
+bindsym $sup+s exec slack
 bindsym $sup+b exec brave-browser
 bindsym $sup+d exec dbeaver
 bindsym $sup+a exec i3-sensible-terminal -e nvim ~/Documents/aidstream-new

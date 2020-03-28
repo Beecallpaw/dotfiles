@@ -17,5 +17,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'vim-airline/vim-airline'
 Plug 'scrooloose/syntastic'
 Plug 'stephpy/vim-php-cs-fixer'
+Plug 'andys8/vim-elm-syntax'
+Plug 'rhysd/clever-f.vim'
 
 call plug#end()

@@ -92,7 +92,7 @@ let g:php_cs_fixer_level = "psr2"
 
 " Format on save
 autocmd BufWritePost *.php silent! call PhpCsFixerFixFile()
-
+autocmd BufWritePost *.elm silent! call CocAction('format')
 "=======Search========="
 "Highlight search term
 set hlsearch
