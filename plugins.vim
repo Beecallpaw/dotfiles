@@ -19,5 +19,8 @@ Plug 'scrooloose/syntastic'
 Plug 'stephpy/vim-php-cs-fixer'
 Plug 'andys8/vim-elm-syntax'
 Plug 'rhysd/clever-f.vim'
-
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': './install.sh'
+    \ }
 call plug#end()

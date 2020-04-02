@@ -159,7 +159,6 @@ for_window [class="."] focus
 for_window [class="."] border pixel 1
 
 # Startup apps
-exec brave-browser
 exec i3-sensible-terminal
 # exec code
 # exec clipit

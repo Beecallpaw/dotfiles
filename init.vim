@@ -27,6 +27,9 @@ set clipboard=unnamedplus
 " Paste selected text
 nmap <Leader>p "*p
 
+" Save file
+nmap <Leader>w :w<cr>
+
 "======= Plugins ======="
 so ~/.config/nvim/plugins.vim
 
@@ -94,14 +97,18 @@ let g:php_cs_fixer_level = "psr2"
 autocmd BufWritePost *.php silent! call PhpCsFixerFixFile()
 autocmd BufWritePost *.elm silent! call CocAction('format')
 "=======Search========="
-"Highlight search term
-set hlsearch
 
 "Remove highlight color
-nmap <Leader><space> :nohlsearch<cr>
+map <esc> :nohlsearch<cr>
 
 " Enable incremental search
 set incsearch
+
+" case insensitive search
+set ignorecase
+
+" case sensitive if uppercase letter
+set smartcase
 
 "====== Split Editor======="
 
