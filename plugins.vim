@@ -23,4 +23,6 @@ Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
     \ 'do': './install.sh'
     \ }
+Plug 'vimlab/split-term.vim'
+
 call plug#end()

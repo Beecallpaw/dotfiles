@@ -110,6 +110,9 @@ set ignorecase
 " case sensitive if uppercase letter
 set smartcase
 
+" clever f smartcase search 
+let g:clever_f_smart_case = 1
+
 "====== Split Editor======="
 
 "change default split option
@@ -124,6 +127,8 @@ nmap <C-L> <C-W><C-L>
 
 "vertical split
 nmap <C-\> :vsp<cr>
+
+map <A-t> :15Term<cr>
 
 "==========coc.nvim============== 
 so ~/.config/nvim/coc.vim
