@@ -7,6 +7,9 @@ filetype plugin on
 "Enable syntax highlighting
 syntax enable
 
+" Change Leader 
+let mapleader= ';'
+
 " Indentation
 set autoindent
 set tabstop=4
@@ -30,15 +33,20 @@ nmap <Leader>p "*p
 " Save file
 nmap <Leader>w :w<cr>
 
+" Move lines
+nnoremap <A-j> :m .+1<CR>==
+nnoremap <A-k> :m .-2<CR>==
+inoremap <A-j> <Esc>:m .+1<CR>==gi
+inoremap <A-k> <Esc>:m .-2<CR>==gi
+vnoremap <A-j> :m '>+1<CR>gv=gv
+vnoremap <A-k> :m '<-2<CR>gv=gv
+
 "======= Plugins ======="
 so ~/.config/nvim/plugins.vim
 
 " Editor
 colorscheme dracula
 set foldcolumn=1 " Left padding
-
-" Change Leader 
-let mapleader= ';'
 
 " Change default Esc binding
 inoremap jk <ESC>
