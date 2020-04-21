@@ -32,6 +32,11 @@ nmap <Leader>p "*p
 
 " Save file
 nmap <Leader>w :w<cr>
+nmap <Leader>W :wq<cr>
+
+" Exit
+nmap <Leader>q :q<cr>
+nmap <Leader>Q :q!<cr>
 
 " Move lines
 nnoremap <A-j> :m .+1<CR>==
@@ -62,8 +67,31 @@ nmap <Leader>ep :tabedit ~/.config/nvim/plugins.vim<cr>
 " Automatically write file while changing buffer
 set autowriteall
 
+" Multi-cursors
+let g:multi_cursor_use_default_mapping=0
+
+" Default mapping
+let g:multi_cursor_start_word_key      = '<C-n>'
+let g:multi_cursor_select_all_word_key = '<A-n>'
+let g:multi_cursor_start_key           = 'g<C-n>'
+let g:multi_cursor_select_all_key      = 'g<A-n>'
+let g:multi_cursor_next_key            = '<C-n>'
+let g:multi_cursor_prev_key            = '<C-m>'
+let g:multi_cursor_skip_key            = '<C-x>'
+let g:multi_cursor_quit_key            = '<Esc>'
+let g:multi_cursor_exit_from_visual_mode=1
+let g:multi_cursor_exit_from_insert_mode=1
+
+" Fzf 
+nmap <Leader>f :GFiles<cr>
+nmap <Leader>F :Files<cr>
+
+" Buffers, History and Registers
+nmap <Leader>b :Buffers<cr>
+nmap <Leader>h :History<cr>
+nmap <Leader>r :registers<cr>
+
 " Ctrl P
-nmap <Leader>f :CtrlPMRUFiles<cr>
 nmap <Leader>m :CtrlPBufTag<cr>
 
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
@@ -84,6 +112,10 @@ let g:NERDDefaultAlign = 'left'
 let g:NERDToggleCheckAllLines = 1
 
 map <C-_> <Plug>NERDCommenterToggle
+
+" Git gutter
+nmap ]h <Plug>(GitGutterNextHunk)
+nmap [h <Plug>(GitGutterPrevHunk)
 
 " Syntastic 
 set statusline+=%#warningmsg#

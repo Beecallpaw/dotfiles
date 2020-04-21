@@ -24,5 +24,8 @@ Plug 'autozimu/LanguageClient-neovim', {
     \ 'do': './install.sh'
     \ }
 Plug 'vimlab/split-term.vim'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'honza/vim-snippets'
+Plug 'SirVer/ultisnips'
 
 call plug#end()
