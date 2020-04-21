@@ -166,13 +166,27 @@ nmap <C-K> <C-W><C-K>
 nmap <C-H> <C-W><C-H>
 nmap <C-L> <C-W><C-L>
 
+"Resive split editors
+nnoremap <silent> <Leader>+ :exe "resize " . (winheight(0) * 3/2)<CR>
+nnoremap <silent> <Leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
+
 "vertical split
 nmap <C-\> :vsp<cr>
 
+"Horizontal terminal
 map <A-t> :15Term<cr>
 
 "==========coc.nvim============== 
 so ~/.config/nvim/coc.vim
+
+
+"===========Tabularize==============
+  nmap <Leader>a= :Tabularize /=<CR>
+  vmap <Leader>a= :Tabularize /=<CR>
+  nmap <Leader>a> :Tabularize /=><CR>
+  vmap <Leader>a> :Tabularize /=><CR>
+  nmap <Leader>a: :Tabularize /:<CR>
+  vmap <Leader>a: :Tabularize /:<CR>
 
 "========AutoCommands
 " Source automatically on save

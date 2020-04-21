@@ -27,5 +27,6 @@ Plug 'vimlab/split-term.vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'honza/vim-snippets'
 Plug 'SirVer/ultisnips'
+Plug 'godlygeek/tabular'
 
 call plug#end()
