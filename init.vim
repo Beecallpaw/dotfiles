@@ -8,7 +8,7 @@ filetype plugin on
 syntax enable
 
 " Change Leader 
-let mapleader= ';'
+let mapleader= ' '
 
 " Indentation
 set autoindent
@@ -152,6 +152,7 @@ set smartcase
 
 " clever f smartcase search 
 let g:clever_f_smart_case = 1
+let g:clever_f_timeout_ms = 1000
 
 "====== Split Editor======="
 
