@@ -145,6 +145,14 @@ function restart(){
 	sudo systemctl restart $1;
 }
 
+function disable(){
+    sudo systemctl disable $1;
+}
+
+function enable(){
+    sudo systemctl enable $1;
+}
+
 export PATH="$PATH:$HOME/.composer/vendor/bin"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -171,3 +179,9 @@ export FZF_DEFAULT_OPTS="
 --bind 'ctrl-e:execute(echo {+} | xargs -o vim)'
 --bind 'ctrl-v:execute(code {+})'
 "
+
+# Git diff with fzf
+fd() {
+  preview="git diff $@ --color=always -- {-1}"
+  git diff $@ --name-only | fzf -m --ansi --preview $preview
+}

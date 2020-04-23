@@ -10,6 +10,9 @@ syntax enable
 " Change Leader 
 let mapleader= ' '
 
+" Relative line numbers 
+set relativenumber
+
 " Indentation
 set autoindent
 set tabstop=4
