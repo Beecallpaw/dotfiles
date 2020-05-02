@@ -1,11 +1,21 @@
+" command! -nargs=0 Prettier :CocCommand prettier.formatFile
+
+autocmd BufWritePost *.js :CocCommand prettier.formatFile
 "==========coc.vim
 nmap <Leader>gd <Plug>(coc-definition)
 nmap <Leader>gr <Plug>(coc-references)
 nmap <Leader>gi <Plug>(coc-implementation)
 nmap <Leader>rn <Plug>(coc-rename)
 
-" Use <Leader>od to show documentation in preview window.
-nnoremap <silent> <Leader>od :call <SID>show_documentation()<CR>
+" Use `[e` and `]e` to navigate diagnostics
+nmap <silent> [e <Plug>(coc-diagnostic-prev)
+nmap <silent> ]e <Plug>(coc-diagnostic-next)
+
+" Apply AutoFix to problem on the current line.
+nmap <leader>qf  <Plug>(coc-fix-current)
+
+" Use K to show documentation in preview window.
+nnoremap <silent> K :call <SID>show_documentation()<CR>
 
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
@@ -37,7 +47,6 @@ let g:coc_global_extensions = [
   \ 'coc-css',
   \ 'coc-emmet',
   \ ]
-
 
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? coc#_select_confirm() :

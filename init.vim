@@ -1,17 +1,22 @@
 " be improved
-set nocompatible               
+set nocompatible
 
-"NerdCommenter 
+"NerdCommenter
 filetype plugin on
 
 "Enable syntax highlighting
 syntax enable
 
-" Change Leader 
+" Change Leader
 let mapleader= ' '
 
-" Relative line numbers 
-set relativenumber
+" Relative line numbers
+set number relativenumber
+
+" highlight trailing whitespace
+match ErrorMsg '\s\+$'
+" remove trailing whitespaces automatically
+autocmd BufWritePre * :%s/\s\+$//e
 
 " Indentation
 set autoindent
@@ -74,18 +79,18 @@ set autowriteall
 let g:multi_cursor_use_default_mapping=0
 
 " Default mapping
-let g:multi_cursor_start_word_key      = '<C-n>'
-let g:multi_cursor_select_all_word_key = '<A-n>'
-let g:multi_cursor_start_key           = 'g<C-n>'
-let g:multi_cursor_select_all_key      = 'g<A-n>'
-let g:multi_cursor_next_key            = '<C-n>'
-let g:multi_cursor_prev_key            = '<C-m>'
-let g:multi_cursor_skip_key            = '<C-x>'
-let g:multi_cursor_quit_key            = '<Esc>'
-let g:multi_cursor_exit_from_visual_mode=1
-let g:multi_cursor_exit_from_insert_mode=1
+let g:multi_cursor_start_word_key        = '<C-n>'
+let g:multi_cursor_select_all_word_key   = '<A-n>'
+let g:multi_cursor_start_key             = 'g<C-n>'
+let g:multi_cursor_select_all_key        = 'g<A-n>'
+let g:multi_cursor_next_key              = '<C-n>'
+let g:multi_cursor_prev_key              = '<C-m>'
+let g:multi_cursor_skip_key              = '<C-x>'
+let g:multi_cursor_quit_key              = '<Esc>'
+let g:multi_cursor_exit_from_visual_mode = 1
+let g:multi_cursor_exit_from_insert_mode = 1
 
-" Fzf 
+" Fzf
 nmap <Leader>f :GFiles<cr>
 nmap <Leader>F :Files<cr>
 
@@ -111,7 +116,7 @@ let g:NERDSpaceDelims = 1
 " Align line-wise comment delimiters flush left instead of following code indentation
 let g:NERDDefaultAlign = 'left'
 
-" Enable NERDCommenterToggle to check all selected lines is commented or not 
+" Enable NERDCommenterToggle to check all selected lines is commented or not
 let g:NERDToggleCheckAllLines = 1
 
 map <C-_> <Plug>NERDCommenterToggle
@@ -120,7 +125,7 @@ map <C-_> <Plug>NERDCommenterToggle
 nmap ]h <Plug>(GitGutterNextHunk)
 nmap [h <Plug>(GitGutterPrevHunk)
 
-" Syntastic 
+" Syntastic
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -153,7 +158,7 @@ set ignorecase
 " case sensitive if uppercase letter
 set smartcase
 
-" clever f smartcase search 
+" clever f smartcase search
 let g:clever_f_smart_case = 1
 let g:clever_f_timeout_ms = 1000
 
@@ -179,7 +184,7 @@ nmap <C-\> :vsp<cr>
 "Horizontal terminal
 map <A-t> :15Term<cr>
 
-"==========coc.nvim============== 
+"==========coc.nvim==============
 so ~/.config/nvim/coc.vim
 
 
