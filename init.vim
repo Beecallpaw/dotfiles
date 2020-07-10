@@ -32,6 +32,12 @@ nmap <Leader>h :tabprevious<cr>
 nmap <Leader>l :tabnext<cr>
 nmap <Leader>q :tabclose<cr>
 
+" move in insert mode
+:imap <C-h> <C-o>h
+:imap <C-j> <C-o>j
+:imap <C-k> <C-o>k
+:imap <C-l> <C-o>l
+
 "Change vim register to system clipboard
 set clipboard=unnamedplus
 
@@ -162,6 +168,17 @@ set smartcase
 let g:clever_f_smart_case = 1
 let g:clever_f_timeout_ms = 1000
 
+" rust format on save
+" let g:rustfmt_autosave = 1
+" autocmd BufReadPost *.rs setlocal filetype=rust
+" set hidden
+" let g:LanguageClient_serverCommands = {
+"     \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
+"     \ }
+" let g:LanguageClient_autoStart = 1
+" let g:racer_cmd = '/home/bee/.cargo/bin/racer'
+" let g:racer_experimental_completer = 1
+" let g:racer_insert_paren = 1
 "====== Split Editor======="
 
 "change default split option

@@ -26,5 +26,9 @@ Plug 'autozimu/LanguageClient-neovim', {
 Plug 'vimlab/split-term.vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'godlygeek/tabular'
+Plug 'rust-lang/rust.vim'
+Plug 'racer-rust/vim-racer'
+Plug 'tpope/vim-repeat'
+Plug 'vim-ruby/vim-ruby'
 
 call plug#end()
