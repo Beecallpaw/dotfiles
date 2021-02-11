@@ -1,0 +1,8 @@
+# alias c="php5.6 app/console cache:clear --env=dev"
+# alias x="php5.6 app/console server:stop"
+# alias s="php5.6 app/console server:start"
+# alias q="php5.6 app/console enqueue:consume --setup-broker -vvv"
+alias par="php artisan"
+alias tinker="php artisan tinker"
+alias queue="php7.3 artisan queue:listen"
+alias sail="./vendor/bin/sail"

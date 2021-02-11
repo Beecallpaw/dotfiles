@@ -98,60 +98,20 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+export ALIAS_PATH="/home/bee/Documents/dotfiles/zshAlias"
+
 # Source z
 . ~/.z.sh
 
-# Aliases
-alias upd="sudo apt-get update"
-alias upg="sudo apt-get upgrade"
-alias ins="sudo apt-get install"
-alias ar="sudo apt autoremove"
-alias gsp="git stash pop"
-alias gsl="git stash list"
-alias gcan="git commit --amend --no-edit -a"
-alias gcap="git commit --amend --no-edit -a && ggpush -f"
-alias grm="git rebase master"
-alias grx="git rebase --abort"
-alias grc="git rebase --continue"
-alias o="xdg-open ."
-alias c="php5.6 app/console cache:clear --env=dev"
-alias x="php5.6 app/console server:stop"
-alias s="php5.6 app/console server:start"
-alias q="php5.6 app/console enqueue:consume --setup-broker -vvv"
-alias par="php artisan"
-alias tinker="php artisan tinker"
-alias queue="php7.0 artisan queue:listen"
-alias serve="php7.0 artisan serve --port=3333"
-alias glgo="git log --graph --oneline --all"
-alias vi="nvim"
-alias vim="nvim"
-alias v="nvim"
-alias soz="source ~/.zshrc"
-alias cat="bat"
-#Functions
-function start(){
-	sudo systemctl start $1;
-}
+# Source Aliases
+## Linux Aliases
+. $ALIAS_PATH/linux
 
-function stop(){
-	sudo systemctl stop $1;
-}
+## Git Aliases
+. $ALIAS_PATH/git
 
-function status(){
-	sudo systemctl status $1;
-}
-
-function restart(){
-	sudo systemctl restart $1;
-}
-
-function disable(){
-    sudo systemctl disable $1;
-}
-
-function enable(){
-    sudo systemctl enable $1;
-}
+## Projects Aliases
+. $ALIAS_PATH/project
 
 export PATH="$PATH:$HOME/.composer/vendor/bin"
 export NVM_DIR="$HOME/.nvm"
@@ -191,3 +151,4 @@ export PATH="$PATH:$HOME/.rvm/bin"
 source "/etc/profile.d/rvm.sh"
 
 export PATH="$PATH:$HOME/Downloads/flutterGit/bin"
+export PATH="$(yarn global bin):$PATH"

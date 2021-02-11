@@ -1,4 +1,4 @@
-call plug#begin()            
+call plug#begin()
 
 "======== Plugins =======
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -30,5 +30,8 @@ Plug 'rust-lang/rust.vim'
 Plug 'racer-rust/vim-racer'
 Plug 'tpope/vim-repeat'
 Plug 'vim-ruby/vim-ruby'
+Plug 'kkoomen/vim-doge', { 'do': { -> doge#install() } }
+Plug 'vim-test/vim-test'
+Plug 'dbeniamine/cheat.sh-vim'
 
 call plug#end()

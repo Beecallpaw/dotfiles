@@ -1,0 +1,8 @@
+alias gsp="git stash pop"
+alias gsl="git stash list"
+alias gcan="git commit --amend --no-edit -a"
+alias gcap="git commit --amend --no-edit -a && ggpush -f"
+alias grm="git rebase master"
+alias grx="git rebase --abort"
+alias grc="git rebase --continue"
+alias glgo="git log --graph --oneline --all"

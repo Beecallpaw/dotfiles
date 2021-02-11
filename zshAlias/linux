@@ -1,0 +1,37 @@
+alias upd="sudo apt-get update"
+alias upg="sudo apt-get upgrade"
+alias ins="sudo apt-get install"
+alias ar="sudo apt autoremove"
+alias unins="sudo apt remove"
+alias o="xdg-open ."
+alias vi="nvim"
+alias vim="nvim"
+alias v="nvim ."
+alias soz="source ~/.zshrc"
+alias cat="bat"
+alias lh="ls -lah"
+
+#Functions
+function start(){
+	sudo systemctl start $1;
+}
+
+function stop(){
+	sudo systemctl stop $1;
+}
+
+function status(){
+	sudo systemctl status $1;
+}
+
+function restart(){
+	sudo systemctl restart $1;
+}
+
+function disable(){
+    sudo systemctl disable $1;
+}
+
+function enable(){
+    sudo systemctl enable $1;
+}

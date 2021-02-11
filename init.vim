@@ -114,7 +114,7 @@ let g:ctrlp_match_window = 'top,order:ttb,min:1,max:10,results:10'
 " Nerdtree
 nmap <Leader>ts :NERDTreeToggle<cr>
 let NERDTreeHijackNetrw = 0
-let g:NERDTreeShowIgnoredStatus = 1
+let g:NERDTreeGitStatusShowIgnored = 1
 
 " Nerdtree commenter
 let g:NERDSpaceDelims = 1
